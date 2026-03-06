@@ -16,10 +16,7 @@
   <nav class="bg-zinc-900 border-b border-zinc-800 sticky top-0 z-50">
     <div class="max-w-6xl mx-auto px-4 sm:px-6">
       <div class="flex items-center justify-between h-16">
-        <!-- Logo -->
         <a href="#" onclick="showPage('home')" class="text-2xl font-bold tracking-tighter text-neon-400">OddsEdge</a>
-
-        <!-- Desktop Menu -->
         <div class="hidden md:flex items-center gap-8 text-sm font-medium">
           <a href="#" onclick="showPage('home')" class="hover:text-neon-400 transition">Home</a>
           <a href="#" onclick="showPage('tools')" class="hover:text-neon-400 transition">Calculator</a>
@@ -28,22 +25,18 @@
           <a href="#" onclick="showPage('education')" class="hover:text-neon-400 transition">Education</a>
           <a href="#" onclick="showPage('about')" class="hover:text-neon-400 transition">About</a>
         </div>
-
-        <!-- Mobile Hamburger Button -->
         <button id="mobileMenuBtn" class="md:hidden text-zinc-300 hover:text-neon-400 focus:outline-none">
           <svg class="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
-
-        <!-- Contact button (desktop only) -->
         <a href="#" onclick="showPage('contact')" class="hidden md:inline-flex bg-neon-500 hover:bg-neon-400 text-black font-semibold px-5 py-2.5 rounded-2xl transition">
           Contact Us
         </a>
       </div>
     </div>
 
-    <!-- Mobile Menu Overlay -->
+    <!-- Mobile Menu -->
     <div id="mobileMenu" class="hidden fixed inset-0 bg-zinc-950/95 backdrop-blur-lg z-50 flex flex-col">
       <div class="flex justify-between items-center p-6 border-b border-zinc-800">
         <a href="#" onclick="showPage('home'); toggleMobileMenu()" class="text-2xl font-bold text-neon-400">OddsEdge</a>
@@ -56,9 +49,7 @@
         <a href="#" onclick="showPage('bookies'); toggleMobileMenu()" class="hover:text-neon-400 transition">Bookies</a>
         <a href="#" onclick="showPage('education'); toggleMobileMenu()" class="hover:text-neon-400 transition">Education</a>
         <a href="#" onclick="showPage('about'); toggleMobileMenu()" class="hover:text-neon-400 transition">About</a>
-        <a href="#" onclick="showPage('contact'); toggleMobileMenu()" class="bg-neon-500 hover:bg-neon-400 text-black font-semibold px-10 py-4 rounded-2xl transition mt-6">
-          Contact Us
-        </a>
+        <a href="#" onclick="showPage('contact'); toggleMobileMenu()" class="bg-neon-500 hover:bg-neon-400 text-black font-semibold px-10 py-4 rounded-2xl transition mt-6">Contact Us</a>
       </div>
     </div>
   </nav>
@@ -69,26 +60,23 @@
     <div id="home" class="page">
       <div class="text-center max-w-3xl mx-auto">
         <h1 class="text-5xl font-bold tracking-tighter mb-4">Bet Smarter.<br>Win More.</h1>
-        <p class="text-xl text-zinc-400 mb-10">Free odds calculator • Daily expert picks • Pro education for Nigerian & crypto bettors.</p>
+        <p class="text-xl text-zinc-400 mb-10">Free odds calculator • Daily expert picks • Pro education for South African & crypto bettors.</p>
         <button onclick="showPage('tools')" class="bg-neon-500 hover:bg-neon-400 text-black font-bold text-lg px-10 py-4 rounded-2xl">Open Calculator →</button>
       </div>
     </div>
 
-    <!-- TOOLS - FULL CALCULATOR (50 legs) -->
+    <!-- TOOLS - FULL CALCULATOR -->
     <div id="tools" class="page hidden">
       <div class="text-center mb-8">
         <h1 class="text-4xl font-bold">Ultimate Odds Calculator</h1>
         <p class="text-zinc-400">Single • Parlay up to 50 legs • EV</p>
       </div>
-      <!-- CALCULATOR START -->
       <div class="max-w-5xl mx-auto">
         <div id="modeToggle" class="mx-auto mb-6 flex w-fit rounded-2xl border border-zinc-800 bg-zinc-900 p-1 text-sm font-medium">
           <button id="singleBtn" class="mode-btn active px-8 py-3 rounded-xl">Single Bet</button>
           <button id="parlayBtn" class="mode-btn px-8 py-3 rounded-xl">Parlay (50 legs)</button>
         </div>
-
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- Inputs -->
           <div class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
             <div id="singleInputs">
               <label class="block mb-5">
@@ -103,7 +91,6 @@
                 <input id="oddsInput" type="text" value="-110" placeholder="-110, +150, 1.91, 5/2, 50%" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 px-5 text-lg mt-2 focus:border-neon-500">
               </label>
             </div>
-
             <div id="parlayInputs" class="hidden">
               <label class="block mb-5">
                 <span class="text-sm font-medium text-zinc-300">Total Bet Amount</span>
@@ -118,7 +105,6 @@
               </div>
               <div id="legsContainer" class="space-y-3 max-h-[420px] overflow-y-auto pr-2"></div>
             </div>
-
             <div class="mt-8">
               <span class="text-xs text-zinc-400 block mb-2">Quick Presets</span>
               <div class="flex flex-wrap gap-2">
@@ -130,8 +116,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Results + EV -->
           <div>
             <div id="resultsContainer" class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 space-y-3"></div>
             <div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
@@ -187,7 +171,7 @@
     <!-- ABOUT -->
     <div id="about" class="page hidden">
       <h1 class="text-4xl font-bold mb-8">About OddsEdge</h1>
-      <p class="max-w-2xl text-lg text-zinc-300">Built by @NadinhoCrypto for Nigerian & crypto bettors. Free tools. No ads. Just real value.</p>
+      <p class="max-w-2xl text-lg text-zinc-300">Built by @NadinhoCrypto for South African & crypto bettors. Free tools. No ads. Just real value.</p>
     </div>
 
     <!-- CONTACT -->
@@ -202,10 +186,10 @@
     </div>
   </div>
 
-  <!-- AI CHAT WIDGET -->
-  <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-2xl bg-neon-500 shadow-[0_0_30px_rgba(57,255,136,0.5)] hover:scale-110 transition-all">
+  <!-- AI CHAT WIDGET (Clean Chibz iframe version) -->
+  <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-2xl bg-neon-500 shadow-[0_0_30px_rgba(57,255,136,0.5)] hover:scale-110 transition-all duration-200">
     <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2z" />
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h12a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4v-4H5z" />
     </svg>
   </button>
 
@@ -215,37 +199,34 @@
         <div class="flex items-center gap-3">
           <div class="w-8 h-8 bg-neon-500 rounded-2xl flex items-center justify-center text-black font-bold">AI</div>
           <div>
-            <div class="font-semibold">OddsEdge AI</div>
-            <div class="text-xs text-emerald-400">Online • Your Betting Assistant</div>
+            <div class="font-semibold">OddsEdge AI Agent</div>
+            <div class="text-xs text-emerald-400 flex items-center gap-1">
+              <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+              Powered by Chibz
+            </div>
           </div>
         </div>
-        <button onclick="toggleChat()" class="text-zinc-400 hover:text-white">✕</button>
+        <button onclick="toggleChat()" class="text-zinc-400 hover:text-white text-xl">✕</button>
       </div>
-      <div id="chatMessages" class="flex-1 overflow-y-auto p-5 space-y-4 bg-zinc-950"></div>
-      <div class="p-4 border-t border-zinc-700 bg-zinc-900">
-        <div class="flex gap-2">
-          <input id="chatInput" type="text" placeholder="Ask about EV, parlays, bankroll..." class="flex-1 bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-neon-500" onkeypress="if(event.key==='Enter') sendMessage()">
-          <button onclick="sendMessage()" class="bg-neon-500 hover:bg-neon-400 text-black px-6 rounded-2xl font-medium">Send</button>
-        </div>
-      </div>
+      <iframe id="agentIframe" src="https://chibz.steprotech.com/webhook/8b63931b-589c-454e-87cb-75fbb523fe5d/chat" frameborder="0" class="flex-1 w-full" allowfullscreen allow="microphone; camera; clipboard-write;"></iframe>
     </div>
   </div>
 
-  <footer class="text-center py-10 text-zinc-500 text-xs">© 2026 OddsEdge • Gamble responsibly</footer>
+  <footer class="text-center py-10 text-zinc-500 text-xs">© 2026 OddsEdge • South African & crypto bettors • Gamble responsibly • BTC payouts coming soon</footer>
 
   <script>
-    // ==================== PAGE SYSTEM ====================
+    // PAGE SYSTEM
     function showPage(page) {
       document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
       document.getElementById(page).classList.remove('hidden');
     }
 
-    // ==================== MOBILE MENU ====================
+    // MOBILE MENU
     function toggleMobileMenu() {
       document.getElementById("mobileMenu").classList.toggle("hidden");
     }
 
-    // ==================== FULL CALCULATOR (50 legs) ====================
+    // CALCULATOR LOGIC (your exact code - untouched)
     let currentMode = "single";
     let legs = [{id:1,value:""},{id:2,value:""}];
 
@@ -274,30 +255,15 @@
     function parseOddsToDecimal(raw) {
       const s = (raw||"").trim();
       if(!s) return {ok:false};
-      if(s.endsWith("%")) {
-        const p = parseFloat(s)/100;
-        if(p>0 && p<1) return {ok:true, decimal:1/p, detected:"Probability"};
-      }
-      if(s.includes("/")) {
-        const [a,b] = s.split("/").map(Number);
-        if(a>0 && b>0) return {ok:true, decimal:1 + a/b, detected:"Fractional"};
-      }
-      if(s.startsWith("+") || s.startsWith("-")) {
-        const val = parseFloat(s);
-        const dec = val>0 ? 1+val/100 : 1+100/Math.abs(val);
-        return {ok:true, decimal:dec, detected:"American"};
-      }
-      const n = parseFloat(s);
-      if(n>1) return {ok:true, decimal:n, detected:"Decimal"};
-      return {ok:false};
+      if(s.endsWith("%")) { const p = parseFloat(s)/100; if(p>0 && p<1) return {ok:true, decimal:1/p, detected:"Probability"}; }
+      if(s.includes("/")) { const [a,b] = s.split("/").map(Number); if(a>0 && b>0) return {ok:true, decimal:1 + a/b, detected:"Fractional"}; }
+      if(s.startsWith("+") || s.startsWith("-")) { const val = parseFloat(s); const dec = val>0 ? 1+val/100 : 1+100/Math.abs(val); return {ok:true, decimal:dec, detected:"American"}; }
+      const n = parseFloat(s); if(n>1) return {ok:true, decimal:n, detected:"Decimal"}; return {ok:false};
     }
 
     function decimalToAmerican(d) { return d>=2 ? Math.round((d-1)*100) : -Math.round(100/(d-1)); }
     function decimalToFractional(d) {
-      const x = d-1;
-      let num = Math.round(x*100), den = 100;
-      const g = gcd(num,den);
-      return {num: num/g, den: den/g};
+      const x = d-1; let num = Math.round(x*100), den = 100; const g = gcd(num,den); return {num: num/g, den: den/g};
     }
     function decimalToProbability(d) { return 1/d; }
 
@@ -343,12 +309,12 @@
         const payout = stake * decimal;
 
         html = `
-          <div class="resultRow"><div class="text-sm text-zinc-300">American</div><div class="value">${am>0?"+"+am:am}</div></div>
-          <div class="resultRow"><div class="text-sm text-zinc-300">Decimal</div><div class="value">${formatDecimal(decimal)}</div></div>
-          <div class="resultRow"><div class="text-sm text-zinc-300">Fractional</div><div class="value">${frac.num}/${frac.den}</div></div>
-          <div class="resultRow"><div class="text-sm text-zinc-300">Implied Prob</div><div class="value">${formatPercent(prob)}</div></div>
-          <div class="resultRow"><div class="text-sm text-zinc-300">Profit</div><div class="value">${formatMoney(profit)}</div></div>
-          <div class="resultRow"><div class="text-sm text-zinc-300">Total Payout</div><div class="value">${formatMoney(payout)}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">American</div><div class="font-mono">${am>0?"+"+am:am}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">Decimal</div><div class="font-mono">${formatDecimal(decimal)}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">Fractional</div><div class="font-mono">${frac.num}/${frac.den}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">Implied Prob</div><div class="font-mono">${formatPercent(prob)}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">Profit</div><div class="font-mono">${formatMoney(profit)}</div></div>
+          <div class="resultRow flex justify-between py-2"><div class="text-sm text-zinc-300">Total Payout</div><div class="font-mono">${formatMoney(payout)}</div></div>
         `;
       }
       els.resultsContainer.innerHTML = html;
@@ -374,7 +340,7 @@
       update();
     }
 
-    // Event listeners for calculator
+    // Event listeners
     els.singleBtn.onclick = () => setMode("single");
     els.parlayBtn.onclick = () => setMode("parlay");
     els.addLegBtn.onclick = () => {
@@ -402,10 +368,9 @@
       els.oddsInput.addEventListener(ev, update);
     });
 
-    // ==================== MOBILE MENU EVENT LISTENER ====================
     document.getElementById("mobileMenuBtn").onclick = toggleMobileMenu;
 
-    // ==================== AUTO BET OF THE DAY ====================
+    // BET OF THE DAY
     function loadBetOfTheDay() {
       const today = new Date().toISOString().slice(0,10);
       const matches = [
@@ -413,7 +378,6 @@
         {date:"2026-03-07", match:"Bayern Munich vs Dortmund", league:"Bundesliga", odds:"1.78", prob:"81%"},
       ];
       const match = matches.find(m => m.date === today) || matches[0];
-
       document.getElementById("betCard").innerHTML = `
         <p class="text-emerald-400 font-medium">${match.league}</p>
         <h2 class="text-3xl font-bold mt-2">${match.match}</h2>
@@ -422,37 +386,17 @@
       `;
     }
 
-    // ==================== AI CHAT ====================
+    // CLEAN AI CHAT TOGGLE
     function toggleChat() {
-      document.getElementById("chatModal").classList.toggle("hidden");
+      const modal = document.getElementById('chatModal');
+      modal.classList.toggle('hidden');
+      if (!modal.classList.contains('hidden')) {
+        const iframe = document.getElementById('agentIframe');
+        iframe.src = iframe.src;
+      }
     }
 
-    function addMessage(text, isUser = false) {
-      const container = document.getElementById("chatMessages");
-      const div = document.createElement("div");
-      div.className = `flex ${isUser ? 'justify-end' : ''}`;
-      div.innerHTML = `<div class="${isUser ? 'bg-neon-500 text-black' : 'bg-zinc-800'} max-w-[85%] rounded-3xl px-5 py-3">${text}</div>`;
-      container.appendChild(div);
-      container.scrollTop = container.scrollHeight;
-    }
-
-    function sendMessage() {
-      const input = document.getElementById("chatInput");
-      const text = input.value.trim();
-      if (!text) return;
-      addMessage(text, true);
-      input.value = "";
-
-      setTimeout(() => {
-        const lower = text.toLowerCase();
-        let reply = "Great question! I can help with EV, parlays, bankroll management, or bookie tips.";
-        if (lower.includes("ev") || lower.includes("expected")) reply = "EV is when your true win probability > implied odds. Use the slider in the calculator!";
-        if (lower.includes("parlay")) reply = "Keep parlays to 8-10 legs max for real value. 50-leg parlays are fun but almost impossible long-term.";
-        addMessage(reply);
-      }, 700);
-    }
-
-    // ==================== INIT ====================
+    // INIT
     showPage("home");
     setMode("single");
     renderLegs();
