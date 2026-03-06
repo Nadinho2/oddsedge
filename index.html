@@ -38,195 +38,120 @@
     <div id="home" class="page">
       <div class="text-center max-w-3xl mx-auto">
         <h1 class="text-5xl font-bold tracking-tighter mb-4">Bet Smarter.<br>Win More.</h1>
-        <p class="text-xl text-zinc-400 mb-10">Free odds calculator, daily expert picks, bookmaker reviews & pro betting education.</p>
+        <p class="text-xl text-zinc-400 mb-10">Free odds calculator • Daily expert picks • Pro education for Nigerian & crypto bettors.</p>
         <button onclick="showPage('tools')" class="bg-neon-500 hover:bg-neon-400 text-black font-bold text-lg px-10 py-4 rounded-2xl">Open Calculator →</button>
       </div>
     </div>
 
-    <!-- TOOLS / CALCULATOR (your full Phase 2 version) -->
-    <div id="tools" <div class="text-center mb-8">
-      <h1 class="text-4xl font-bold">Ultimate Odds Calculator</h1>
-      <p class="text-zinc-400">Single • Parlay (up to 50 legs) • EV</p>
-    </div>
-    
-    <!-- CALCULATOR START -->
-    <div class="max-w-5xl mx-auto">
-      <!-- MODE TOGGLE -->
-      <div id="modeToggle" class="mx-auto mb-6 flex w-fit rounded-2xl border border-zinc-800 bg-zinc-900 p-1 text-sm font-medium">
-        <button id="singleBtn" class="mode-btn active px-8 py-3 rounded-xl">Single Bet</button>
-        <button id="parlayBtn" class="mode-btn px-8 py-3 rounded-xl">Parlay (up to 50)</button>
+    <!-- TOOLS - FULL CALCULATOR (50 legs) -->
+    <div id="tools" class="page hidden">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl font-bold">Ultimate Odds Calculator</h1>
+        <p class="text-zinc-400">Single • Parlay up to 50 legs • EV</p>
       </div>
-    
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <!-- Inputs -->
-        <div class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
-          <div id="singleInputs">
-            <label class="block mb-5">
-              <span class="text-sm font-medium text-zinc-300">Bet Amount</span>
-              <div class="relative mt-2">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">$</span>
-                <input id="stakeInput" type="text" value="100" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 pl-9 text-lg focus:border-neon-500">
-              </div>
-            </label>
-            <label class="block">
-              <span class="text-sm font-medium text-zinc-300">Odds</span>
-              <input id="oddsInput" type="text" value="-110" placeholder="-110, +150, 1.91, 5/2, 50%" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 px-5 text-lg mt-2 focus:border-neon-500">
-            </label>
-          </div>
-    
-          <!-- Parlay -->
-          <div id="parlayInputs" class="hidden">
-            <label class="block mb-5">
-              <span class="text-sm font-medium text-zinc-300">Total Bet Amount</span>
-              <div class="relative mt-2">
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">$</span>
-                <input id="parlayStakeInput" type="text" value="100" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 pl-9 text-lg">
-              </div>
-            </label>
-            <div class="mb-3 flex justify-between">
-              <span class="text-sm font-medium text-zinc-300">Parlay Legs</span>
-              <button id="addLegBtn" class="text-neon-400 text-sm font-medium">+ Add Leg</button>
+      <!-- CALCULATOR START -->
+      <div class="max-w-5xl mx-auto">
+        <div id="modeToggle" class="mx-auto mb-6 flex w-fit rounded-2xl border border-zinc-800 bg-zinc-900 p-1 text-sm font-medium">
+          <button id="singleBtn" class="mode-btn active px-8 py-3 rounded-xl">Single Bet</button>
+          <button id="parlayBtn" class="mode-btn px-8 py-3 rounded-xl">Parlay (50 legs)</button>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <!-- Inputs -->
+          <div class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
+            <div id="singleInputs">
+              <label class="block mb-5">
+                <span class="text-sm font-medium text-zinc-300">Bet Amount</span>
+                <div class="relative mt-2">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">$</span>
+                  <input id="stakeInput" type="text" value="100" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 pl-9 text-lg focus:border-neon-500">
+                </div>
+              </label>
+              <label class="block">
+                <span class="text-sm font-medium text-zinc-300">Odds</span>
+                <input id="oddsInput" type="text" value="-110" placeholder="-110, +150, 1.91, 5/2, 50%" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 px-5 text-lg mt-2 focus:border-neon-500">
+              </label>
             </div>
-            <div id="legsContainer" class="space-y-3 max-h-[420px] overflow-y-auto pr-2"></div>
+
+            <div id="parlayInputs" class="hidden">
+              <label class="block mb-5">
+                <span class="text-sm font-medium text-zinc-300">Total Bet Amount</span>
+                <div class="relative mt-2">
+                  <span class="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400">$</span>
+                  <input id="parlayStakeInput" type="text" value="100" class="w-full bg-zinc-950 border border-zinc-700 rounded-2xl py-4 pl-9 text-lg">
+                </div>
+              </label>
+              <div class="mb-3 flex justify-between">
+                <span class="text-sm font-medium text-zinc-300">Parlay Legs</span>
+                <button id="addLegBtn" class="text-neon-400 text-sm font-medium">+ Add Leg</button>
+              </div>
+              <div id="legsContainer" class="space-y-3 max-h-[420px] overflow-y-auto pr-2"></div>
+            </div>
+
+            <div class="mt-8">
+              <span class="text-xs text-zinc-400 block mb-2">Quick Presets</span>
+              <div class="flex flex-wrap gap-2">
+                <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="-110">-110</button>
+                <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="+150">+150</button>
+                <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="1.91">1.91</button>
+                <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="5/2">5/2</button>
+                <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="50%">50%</button>
+              </div>
+            </div>
           </div>
-    
-          <!-- Presets -->
-          <div class="mt-8">
-            <span class="text-xs text-zinc-400 block mb-2">Quick Presets</span>
-            <div class="flex flex-wrap gap-2">
-              <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="-110">-110</button>
-              <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="+150">+150</button>
-              <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="1.91">1.91</button>
-              <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="5/2">5/2</button>
-              <button class="presetBtn text-xs px-4 py-2 bg-zinc-800 rounded-2xl" data-value="50%">50%</button>
+
+          <!-- Results + EV -->
+          <div>
+            <div id="resultsContainer" class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 space-y-3"></div>
+            <div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
+              <div class="flex justify-between items-center mb-4">
+                <span class="font-medium">Expected Value (EV)</span>
+              </div>
+              <div class="flex gap-4">
+                <input id="evProbInput" type="number" value="52" class="w-20 bg-zinc-950 border border-zinc-700 rounded-2xl py-3 text-center text-xl">
+                <input id="evSlider" type="range" min="0" max="100" value="52" class="flex-1 accent-neon-500">
+              </div>
+              <div id="evDisplay" class="mt-5 text-center bg-zinc-950 rounded-2xl p-5">
+                <div class="text-3xl font-bold" id="evAmount">$0.00</div>
+                <div id="evPercent" class="text-sm font-medium text-neon-400">+0.00%</div>
+              </div>
             </div>
           </div>
         </div>
-    
-        <!-- Results + EV -->
-        <div>
-          <div id="resultsContainer" class="rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6 space-y-3"></div>
-          
-          <!-- EV -->
-          <div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-900/70 p-6">
-            <div class="flex justify-between items-center mb-4">
-              <span class="font-medium">Expected Value (EV)</span>
-              <span class="text-xs text-zinc-400">Your edge</span>
-            </div>
-            <div class="flex gap-4">
-              <input id="evProbInput" type="number" value="52" class="w-20 bg-zinc-950 border border-zinc-700 rounded-2xl py-3 text-center text-xl">
-              <input id="evSlider" type="range" min="0" max="100" value="52" class="flex-1 accent-neon-500">
-            </div>
-            <div id="evDisplay" class="mt-5 text-center bg-zinc-950 rounded-2xl p-5">
-              <div class="text-3xl font-bold" id="evAmount">$0.00</div>
-              <div id="evPercent" class="text-sm font-medium text-neon-400">+0.00%</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- CALCULATOR END -->
-    
-    <style>
-      .mode-btn.active { background: #111; box-shadow: 0 0 0 2px #39FF88; }
-      .resultRow { display: grid; grid-template-columns: 1fr auto auto; gap: 1rem; align-items: center; padding: 1rem; background: #18181b; border-radius: 1rem; }
-      .leg-input { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
-    </style>
-    
-    <script>
-      // ============== FULL CALCULATOR LOGIC (50 LEGS) ==============
-      let currentMode = "single";
-      let legs = [{id:1,value:""},{id:2,value:""}];
-    
-      const els = {
-        singleBtn: document.getElementById("singleBtn"),
-        parlayBtn: document.getElementById("parlayBtn"),
-        singleInputs: document.getElementById("singleInputs"),
-        parlayInputs: document.getElementById("parlayInputs"),
-        legsContainer: document.getElementById("legsContainer"),
-        addLegBtn: document.getElementById("addLegBtn"),
-        stakeInput: document.getElementById("stakeInput"),
-        parlayStakeInput: document.getElementById("parlayStakeInput"),
-        oddsInput: document.getElementById("oddsInput"),
-        resultsContainer: document.getElementById("resultsContainer"),
-        evProbInput: document.getElementById("evProbInput"),
-        evSlider: document.getElementById("evSlider"),
-        evAmount: document.getElementById("evAmount"),
-        evPercent: document.getElementById("evPercent")
-      };
-    
-      // (All the same robust parsing, conversion, update(), renderLegs(), etc. functions from Phase 2)
-      // I kept the full working script here for you — it’s the exact same one that worked before
-    
-      function setMode(mode) {
-        currentMode = mode;
-        els.singleBtn.classList.toggle("active", mode==="single");
-        els.parlayBtn.classList.toggle("active", mode==="parlay");
-        els.singleInputs.classList.toggle("hidden", mode==="parlay");
-        els.parlayInputs.classList.toggle("hidden", mode==="single");
-        if (mode==="parlay") renderLegs();
-        update();
-      }
-    
-      function renderLegs() {
-        els.legsContainer.innerHTML = "";
-        legs.forEach((leg,i) => {
-          const div = document.createElement("div");
-          div.className = "leg-input";
-          div.innerHTML = `
-            <input type="text" class="legOdds bg-zinc-950 border border-zinc-700 rounded-2xl py-4 px-5 text-lg w-full" placeholder="Leg ${i+1}" value="${leg.value}">
-            ${legs.length > 1 ? `<button class="remove-leg text-red-400 text-2xl px-3" data-id="${leg.id}">×</button>` : ''}
-          `;
-          div.querySelector(".legOdds").addEventListener("input", e=>{ leg.value = e.target.value; update(); });
-          if (div.querySelector(".remove-leg")) div.querySelector(".remove-leg").addEventListener("click", ()=>{ legs = legs.filter(l=>l.id!==leg.id); renderLegs(); update(); });
-          els.legsContainer.appendChild(div);
-        });
-      }
-    
-      function update() { /* full calculation logic - same as working Phase 2 */ 
-        // (I kept the exact same update function that worked perfectly before)
-        // Results, EV, copy buttons all included
-      }
-    
-      // Event listeners & init
-      els.singleBtn.onclick = () => setMode("single");
-      els.parlayBtn.onclick = () => setMode("parlay");
-      els.addLegBtn.onclick = () => {
-        if (legs.length >= 50) return alert("Maximum 50 legs reached");
-        legs.push({id:Date.now(), value:""});
-        renderLegs();
-        update();
-      };
-      els.evProbInput.oninput = els.evSlider.oninput = () => { els.evProbInput.value = els.evSlider.value; update(); };
-    
-      // Presets & live updates (same as before)
-      document.querySelectorAll(".presetBtn").forEach(b => b.onclick = () => {
-        if (currentMode==="single") els.oddsInput.value = b.dataset.value;
-        else if (legs.length) { legs[0].value = b.dataset.value; renderLegs(); }
-        update();
-      });
-    
-      setMode("single");
-      renderLegs();
-      update();
-    </script>
       </div>
     </div>
 
-    <!-- BET OF THE DAY (auto daily) -->
+    <!-- BET OF THE DAY (auto) -->
     <div id="betday" class="page hidden">
-      <div class="max-w-2xl mx-auto">
-        <h1 class="text-5xl font-bold mb-8">Bet of the Day</h1>
-        <div id="betCard" class="bg-zinc-900 rounded-3xl p-10"></div>
+      <h1 class="text-5xl font-bold mb-8">Bet of the Day</h1>
+      <div id="betCard" class="max-w-2xl mx-auto bg-zinc-900 rounded-3xl p-10"></div>
+    </div>
+
+    <!-- BOOKIES -->
+    <div id="bookies" class="page hidden">
+      <h1 class="text-4xl font-bold mb-8">Best Bookmakers 2026</h1>
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-zinc-900 p-8 rounded-3xl"><h3 class="text-2xl font-bold">Stake.com <span class="text-xs bg-orange-500 px-2 py-0.5 rounded">CRYPTO</span></h3><p class="text-zinc-400 mt-2">Best for crypto bettors</p><a href="https://stake.com" target="_blank" class="text-neon-400 block mt-6">Visit →</a></div>
+        <div class="bg-zinc-900 p-8 rounded-3xl"><h3 class="text-2xl font-bold">Bet9ja</h3><p class="text-zinc-400 mt-2">Nigeria's #1</p><a href="https://www.bet9ja.com" target="_blank" class="text-neon-400 block mt-6">Visit →</a></div>
       </div>
     </div>
 
-    <!-- BOOKIES, EDUCATION, ABOUT pages (kept short & clean) -->
-    <div id="bookies" class="page hidden">... (your bookies content)</div>
-    <div id="education" class="page hidden">... (your education content)</div>
-    <div id="about" class="page hidden">... (your about content)</div>
+    <!-- EDUCATION -->
+    <div id="education" class="page hidden">
+      <h1 class="text-4xl font-bold mb-8">Betting University</h1>
+      <div class="space-y-12 max-w-2xl">
+        <div><h2 class="text-2xl font-semibold">1. +EV Betting</h2><p class="text-zinc-400">When your estimated probability is higher than the bookmaker's implied odds.</p></div>
+        <div><h2 class="text-2xl font-semibold">2. Bankroll Rule</h2><p class="text-zinc-400">Never risk more than 1-2% of your bankroll on one bet.</p></div>
+      </div>
+    </div>
 
-    <!-- CONTACT US (now fully functional with YOUR Formspree) -->
+    <!-- ABOUT -->
+    <div id="about" class="page hidden">
+      <h1 class="text-4xl font-bold mb-8">About OddsEdge</h1>
+      <p class="max-w-2xl text-lg text-zinc-300">Built by @NadinhoCrypto for Nigerian & crypto bettors. Free tools. No ads. Just real value.</p>
+    </div>
+
+    <!-- CONTACT (real Formspree) -->
     <div id="contact" class="page hidden">
       <h1 class="text-4xl font-bold mb-8">Get in Touch</h1>
       <form action="https://formspree.io/f/xlgpedll" method="POST" class="max-w-md mx-auto bg-zinc-900 p-10 rounded-3xl">
@@ -238,27 +163,249 @@
     </div>
   </div>
 
+  <!-- AI CHAT WIDGET -->
+  <button onclick="toggleChat()" class="fixed bottom-6 right-6 z-[9999] flex h-14 w-14 items-center justify-center rounded-2xl bg-neon-500 shadow-[0_0_30px_rgba(57,255,136,0.5)] hover:scale-110 transition-all">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2 2 2 0 01-2-2 2 2 0 012-2z" /></svg>
+  </button>
+
+  <div id="chatModal" class="hidden fixed inset-0 z-[99999] flex items-end justify-end p-4">
+    <div onclick="event.stopImmediatePropagation()" class="w-full max-w-md bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-700 overflow-hidden flex flex-col h-[520px]">
+      <div class="bg-zinc-950 px-6 py-4 flex items-center justify-between border-b border-zinc-700">
+        <div class="flex items-center gap-3"><div class="w-8 h-8 bg-neon-500 rounded-2xl flex items-center justify-center text-black font-bold">AI</div><div><div class="font-semibold">OddsEdge AI</div><div class="text-xs text-emerald-400">Online • Your Betting Assistant</div></div></div>
+        <button onclick="toggleChat()" class="text-zinc-400 hover:text-white">✕</button>
+      </div>
+      <div id="chatMessages" class="flex-1 overflow-y-auto p-5 space-y-4 bg-zinc-950"></div>
+      <div class="p-4 border-t border-zinc-700 bg-zinc-900">
+        <div class="flex gap-2">
+          <input id="chatInput" type="text" placeholder="Ask about EV, parlays, bankroll..." class="flex-1 bg-zinc-800 border border-zinc-700 rounded-2xl px-5 py-3 text-sm focus:outline-none focus:border-neon-500" onkeypress="if(event.key==='Enter') sendMessage()">
+          <button onclick="sendMessage()" class="bg-neon-500 hover:bg-neon-400 text-black px-6 rounded-2xl font-medium">Send</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer class="text-center py-10 text-zinc-500 text-xs">© 2026 OddsEdge • Gamble responsibly</footer>
 
   <script>
-    // Page switching
+    // ==================== PAGE SYSTEM ====================
     function showPage(page) {
       document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
       document.getElementById(page).classList.remove('hidden');
     }
 
-    // Parlay 50 legs support (already in your calculator)
+    // ==================== FULL CALCULATOR (50 legs) ====================
+    let currentMode = "single";
+    let legs = [{id:1,value:""},{id:2,value:""}];
 
-    // Auto Bet of the Day
-    function loadBetOfTheDay() {
-      const today = new Date().toISOString().slice(0,10);
-      const matches = [ /* your daily matches array */ ];
-      const match = matches[0]; // auto picks today's
-      document.getElementById("betCard").innerHTML = `...`; // your auto content
+    const els = {
+      singleBtn: document.getElementById("singleBtn"),
+      parlayBtn: document.getElementById("parlayBtn"),
+      singleInputs: document.getElementById("singleInputs"),
+      parlayInputs: document.getElementById("parlayInputs"),
+      legsContainer: document.getElementById("legsContainer"),
+      addLegBtn: document.getElementById("addLegBtn"),
+      stakeInput: document.getElementById("stakeInput"),
+      parlayStakeInput: document.getElementById("parlayStakeInput"),
+      oddsInput: document.getElementById("oddsInput"),
+      resultsContainer: document.getElementById("resultsContainer"),
+      evProbInput: document.getElementById("evProbInput"),
+      evSlider: document.getElementById("evSlider"),
+      evAmount: document.getElementById("evAmount"),
+      evPercent: document.getElementById("evPercent")
+    };
+
+    function gcd(a,b){a=Math.abs(a);b=Math.abs(b);while(b){let t=b;b=a%b;a=t;}return a||1;}
+    function formatMoney(n){return isFinite(n)?new Intl.NumberFormat('en-US',{style:'currency',currency:'USD'}).format(n):"—";}
+    function formatDecimal(n){return isFinite(n)?n.toFixed(4).replace(/0+$/,"").replace(/\.$/,""):"—";}
+    function formatPercent(p){return isFinite(p)?(p*100).toFixed(2)+"%":"—";}
+
+    function parseOddsToDecimal(raw) {
+      const s = (raw||"").trim();
+      if(!s) return {ok:false};
+      // Probability %
+      if(s.endsWith("%")) {
+        const p = parseFloat(s)/100;
+        if(p>0 && p<1) return {ok:true, decimal:1/p, detected:"Probability"};
+      }
+      // Fractional
+      if(s.includes("/")) {
+        const [a,b] = s.split("/").map(Number);
+        if(a>0 && b>0) return {ok:true, decimal:1 + a/b, detected:"Fractional"};
+      }
+      // American
+      if(s.startsWith("+") || s.startsWith("-")) {
+        const val = parseFloat(s);
+        const dec = val>0 ? 1+val/100 : 1+100/Math.abs(val);
+        return {ok:true, decimal:dec, detected:"American"};
+      }
+      // Decimal
+      const n = parseFloat(s);
+      if(n>1) return {ok:true, decimal:n, detected:"Decimal"};
+      return {ok:false};
     }
 
-    // Start on home
-    showPage('home');
+    function decimalToAmerican(d) { return d>=2 ? Math.round((d-1)*100) : -Math.round(100/(d-1)); }
+    function decimalToFractional(d) {
+      const x = d-1;
+      let num = Math.round(x*100), den = 100;
+      const g = gcd(num,den);
+      return {num: num/g, den: den/g};
+    }
+    function decimalToProbability(d) { return 1/d; }
+
+    function renderLegs() {
+      els.legsContainer.innerHTML = "";
+      legs.forEach((leg,i) => {
+        const div = document.createElement("div");
+        div.className = "leg-input flex gap-2";
+        div.innerHTML = `<input type="text" class="legOdds flex-1 bg-zinc-950 border border-zinc-700 rounded-2xl py-4 px-5" placeholder="Leg ${i+1}" value="${leg.value}"> ${legs.length>1 ? `<button class="remove-leg text-red-400 text-3xl px-3" data-id="${leg.id}">×</button>` : ''}`;
+        div.querySelector(".legOdds").addEventListener("input", e => {leg.value = e.target.value; update();});
+        if(div.querySelector(".remove-leg")) div.querySelector(".remove-leg").addEventListener("click", ()=>{legs=legs.filter(l=>l.id!==leg.id); renderLegs(); update();});
+        els.legsContainer.appendChild(div);
+      });
+    }
+
+    function getEffectiveDecimal() {
+      if(currentMode==="single") {
+        const res = parseOddsToDecimal(els.oddsInput.value);
+        return res.ok ? res.decimal : null;
+      } else {
+        let prod = 1;
+        for(let leg of legs) {
+          const res = parseOddsToDecimal(leg.value);
+          if(!res.ok) return null;
+          prod *= res.decimal;
+        }
+        return prod;
+      }
+    }
+
+    function update() {
+      const decimal = getEffectiveDecimal();
+      const stake = parseFloat(els.stakeInput.value) || parseFloat(els.parlayStakeInput.value) || 100;
+      let html = "";
+
+      if(!decimal) {
+        html = `<div class="text-center py-12 text-zinc-400">Enter valid odds above</div>`;
+      } else {
+        const am = decimalToAmerican(decimal);
+        const frac = decimalToFractional(decimal);
+        const prob = decimalToProbability(decimal);
+        const profit = stake * (decimal - 1);
+        const payout = stake * decimal;
+
+        html = `
+          <div class="resultRow"><div class="text-sm text-zinc-300">American</div><div class="value">${am>0?"+"+am:am}</div></div>
+          <div class="resultRow"><div class="text-sm text-zinc-300">Decimal</div><div class="value">${formatDecimal(decimal)}</div></div>
+          <div class="resultRow"><div class="text-sm text-zinc-300">Fractional</div><div class="value">${frac.num}/${frac.den}</div></div>
+          <div class="resultRow"><div class="text-sm text-zinc-300">Implied Prob</div><div class="value">${formatPercent(prob)}</div></div>
+          <div class="resultRow"><div class="text-sm text-zinc-300">Profit</div><div class="value">${formatMoney(profit)}</div></div>
+          <div class="resultRow"><div class="text-sm text-zinc-300">Total Payout</div><div class="value">${formatMoney(payout)}</div></div>
+        `;
+      }
+      els.resultsContainer.innerHTML = html;
+
+      // EV
+      const userProb = parseFloat(els.evProbInput.value)/100 || 0.5;
+      const profit = decimal ? stake * (decimal - 1) : 0;
+      const evAmount = (userProb * profit) - ((1-userProb) * stake);
+      const evPercent = ((userProb * (decimal-1)) - (1-userProb)) * 100;
+      const isPos = evPercent >= 0;
+      els.evAmount.textContent = formatMoney(evAmount);
+      els.evAmount.style.color = isPos ? "#39FF88" : "#f87171";
+      els.evPercent.textContent = (isPos?"+":"") + evPercent.toFixed(2) + "%";
+      els.evPercent.style.color = isPos ? "#39FF88" : "#f87171";
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      els.singleBtn.classList.toggle("active", mode==="single");
+      els.parlayBtn.classList.toggle("active", mode==="parlay");
+      els.singleInputs.classList.toggle("hidden", mode==="parlay");
+      els.parlayInputs.classList.toggle("hidden", mode==="single");
+      if(mode==="parlay") renderLegs();
+      update();
+    }
+
+    // Event listeners
+    els.singleBtn.onclick = () => setMode("single");
+    els.parlayBtn.onclick = () => setMode("parlay");
+    els.addLegBtn.onclick = () => {
+      if(legs.length >= 50) return alert("Maximum 50 legs reached");
+      legs.push({id:Date.now(), value:""});
+      renderLegs();
+      update();
+    };
+    els.evProbInput.oninput = els.evSlider.oninput = () => {
+      els.evProbInput.value = els.evSlider.value;
+      update();
+    };
+
+    document.querySelectorAll(".presetBtn").forEach(btn => {
+      btn.onclick = () => {
+        if(currentMode==="single") els.oddsInput.value = btn.dataset.value;
+        else if(legs.length) {legs[0].value = btn.dataset.value; renderLegs();}
+        update();
+      };
+    });
+
+    // Live updates
+    ["input","change"].forEach(ev => {
+      els.stakeInput.addEventListener(ev, update);
+      els.parlayStakeInput.addEventListener(ev, update);
+      els.oddsInput.addEventListener(ev, update);
+    });
+
+    // ==================== AUTO BET OF THE DAY ====================
+    function loadBetOfTheDay() {
+      const today = new Date().toISOString().slice(0,10);
+      const matches = [
+        {date:"2026-03-06", match:"Liverpool vs Manchester United", league:"Premier League", odds:"1.85", prob:"76%"},
+        {date:"2026-03-07", match:"Bayern Munich vs Dortmund", league:"Bundesliga", odds:"1.78", prob:"81%"},
+      ];
+      const match = matches.find(m => m.date === today) || matches[0];
+
+      document.getElementById("betCard").innerHTML = `
+        <p class="text-emerald-400 font-medium">${match.league}</p>
+        <h2 class="text-3xl font-bold mt-2">${match.match}</h2>
+        <p class="text-5xl font-bold text-neon-400 mt-8">${match.odds} <span class="text-xl text-zinc-400">Over 2.5 Goals</span></p>
+        <div class="mt-8 text-emerald-400">${match.prob} historical probability</div>
+      `;
+    }
+
+    // ==================== AI CHAT ====================
+    function toggleChat() {
+      document.getElementById("chatModal").classList.toggle("hidden");
+    }
+    function addMessage(text, isUser=false) {
+      const container = document.getElementById("chatMessages");
+      const div = document.createElement("div");
+      div.className = `flex ${isUser?'justify-end':''}`;
+      div.innerHTML = `<div class="${isUser?'bg-neon-500 text-black':'bg-zinc-800'} max-w-[85%] rounded-3xl px-5 py-3">${text}</div>`;
+      container.appendChild(div);
+      container.scrollTop = container.scrollHeight;
+    }
+    function sendMessage() {
+      const input = document.getElementById("chatInput");
+      const text = input.value.trim();
+      if(!text) return;
+      addMessage(text, true);
+      input.value = "";
+
+      setTimeout(() => {
+        const lower = text.toLowerCase();
+        let reply = "Great question! I can help with EV, parlays, bankroll management, or bookie tips.";
+        if(lower.includes("ev") || lower.includes("expected")) reply = "EV is when your true win probability > implied odds. Use the slider in the calculator!";
+        if(lower.includes("parlay")) reply = "Keep parlays to 8-10 legs max for real value. 50-leg parlays are fun but almost impossible long-term.";
+        addMessage(reply);
+      }, 700);
+    }
+
+    // ==================== INIT ====================
+    showPage("home");
+    setMode("single");
+    renderLegs();
+    update();
     loadBetOfTheDay();
   </script>
 </body>
